@@ -2,3 +2,22 @@
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.primary {
+  background: #007bff;
+}
+.secondary {
+  background: #6c757d;
+}
+.success {
+  background: #28a745;
+}
+.danger {
+  background: #dc3545;
+}
+.warning {
+  background: #ffc107;
+}
+.info {
+  background: #17a2b8;
+}
