@@ -10,10 +10,6 @@
   background: inherit;
 }
 
-.sidenav i {
-  padding-right: 10px;
-}
-
 .mat-toolbar.mat-primary {
   position: sticky;
   top: 0;
