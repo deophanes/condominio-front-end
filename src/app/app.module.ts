@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -18,6 +18,7 @@ import { RootNavComponent } from './core/root-nav/root-nav.component';
 import { LayoutModule } from '@angular/cdk/layout';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
+import {MatTableModule} from '@angular/material/table';
 
 import { FormCondominioComponent } from './pages/cadastro/condominio/form-condominio/form-condominio.component';
 import { ListCondominioComponent } from './pages/cadastro/condominio/list-condominio/list-condominio.component';
@@ -44,8 +45,12 @@ import { ListCondominioComponent } from './pages/cadastro/condominio/list-condom
     MatCardModule,
     LayoutModule,
     MatButtonModule,
-    MatIconModule
+    MatIconModule,
+    MatTableModule
   ],
+  schemas: [
+    CUSTOM_ELEMENTS_SCHEMA
+   ],
   providers: [],
   bootstrap: [AppComponent]
 })
