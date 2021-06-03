@@ -5,3 +5,65 @@
     <i class="material-icons">keyboard_backspace</i>Voltar
   </button>
 </mat-toolbar>
+
+<div class="container">
+
+  <form [formGroup]='formGroup'>
+
+    <div>
+      <mat-form-field appearance="fill">
+        <mat-label>Codigo</mat-label>
+        <input matInput disabled>
+      </mat-form-field>
+    </div>
+
+    <div>
+      <mat-form-field appearance="fill" class="full-width">
+        <mat-label>Descrição</mat-label>
+        <input formControlName='CON_DESCON' matInput maxlength="50" placeholder="Descrição">
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>CNPJ</mat-label>
+        <input formControlName='CON_COCNPJ' matInput maxlength="14" placeholder="CNPJ">
+      </mat-form-field>
+    </div>
+
+    <div>
+      <mat-form-field appearance="fill">
+        <mat-label>Cep</mat-label>
+        <input formControlName='CON_CEPCON' matInput maxlength="10" placeholder="Cep">
+      </mat-form-field>
+    </div>
+
+    <div>
+      <mat-form-field appearance="fill" class="full-width">
+        <mat-label>Endereço</mat-label>
+        <input formControlName='CON_ENDCON' matInput maxlength="50" placeholder="Endereço">
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>Complemento</mat-label>
+        <input formControlName='CON_COMEND' matInput maxlength="30" placeholder="Complemento">
+      </mat-form-field>
+    </div>
+
+    <div>
+      <mat-form-field appearance="fill" class="half-width">
+        <mat-label>Bairro</mat-label>
+        <input formControlName='CON_BAICON' matInput maxlength="50" placeholder="Bairro">
+      </mat-form-field>
+      <mat-form-field appearance="fill" class="half-width">
+        <mat-label>Cidade</mat-label>
+        <input formControlName='CON_CIDCON' matInput maxlength="50" placeholder="Cidade">
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>UF</mat-label>
+        <input formControlName='CON_ESTCON' matInput maxlength="2" placeholder="UF">
+      </mat-form-field>
+    </div>
+    <div class="space button"></div>
+    <button mat-raised-button [disabled]='!formGroup.valid' class="success white">
+      <i class="material-icons">save</i>Salvar
+    </button>
+
+  </form>
+</div>

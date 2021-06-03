@@ -19,9 +19,16 @@ import { LayoutModule } from '@angular/cdk/layout';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import {MatTableModule} from '@angular/material/table';
+import {MatFormFieldModule} from '@angular/material/form-field'
+import {MatInputModule} from '@angular/material/input'
+import {MatSelectModule} from '@angular/material/select'
+import {MatSnackBarModule} from '@angular/material/snack-bar'
+import {MatGridListModule} from '@angular/material/grid-list'
+import {MatPaginatorModule} from '@angular/material/paginator'
 
 import { FormCondominioComponent } from './pages/cadastro/condominio/form-condominio/form-condominio.component';
 import { ListCondominioComponent } from './pages/cadastro/condominio/list-condominio/list-condominio.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -39,6 +46,7 @@ import { ListCondominioComponent } from './pages/cadastro/condominio/list-condom
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    ReactiveFormsModule,
     MatToolbarModule,
     MatSidenavModule,
     MatListModule,
@@ -46,7 +54,14 @@ import { ListCondominioComponent } from './pages/cadastro/condominio/list-condom
     LayoutModule,
     MatButtonModule,
     MatIconModule,
-    MatTableModule
+    MatTableModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatSelectModule,
+    MatSnackBarModule,
+    MatGridListModule,
+    MatTableModule,
+    MatPaginatorModule
   ],
   schemas: [
     CUSTOM_ELEMENTS_SCHEMA
