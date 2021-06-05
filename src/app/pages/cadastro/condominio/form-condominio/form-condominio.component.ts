@@ -10,6 +10,7 @@ import { Router } from '@angular/router';
 export class FormCondominioComponent implements OnInit {
 
   formGroup: FormGroup;
+  estados: any[] = ['MA', 'PI', 'PE'];
 
   constructor(
     private router: Router,
