@@ -3,14 +3,13 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { Router } from '@angular/router';
-import { Condominio } from '../form-condominio/condominio.model';
+import { Condominio } from '../shared/condominio.model';
 
 const ELEMENT_DATA: Condominio[] = [
 
   {CON_CODCON: 1, CON_DESCON: 'MORADA DOS ORIXAS', CON_COCNPJ: '11111111111111', CON_CIDCON: 'TERESINA', CON_ESTCON: 'PI'},
   {CON_CODCON: 2, CON_DESCON: 'ED. RAFAELA DUARTE', CON_COCNPJ: '22222222222222', CON_CIDCON: 'JABOATAO DOS GUARARAPES', CON_ESTCON: 'PE'},
   {CON_CODCON: 3, CON_DESCON: 'FLAMBOYANT', CON_COCNPJ: '33333333333333', CON_CIDCON: 'RECIFE', CON_ESTCON: 'PE'}
-
 
 ];
 
