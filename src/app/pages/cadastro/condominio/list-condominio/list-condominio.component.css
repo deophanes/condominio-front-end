@@ -2,33 +2,25 @@ table {
   width: 100%;
 }
 
-.title {
-  font-size: 2rem;
-  font-weight: 300;
-  line-height: 1.2;
-}
-
-.mat-icon {
-  font-size: 2rem
-}
-
-tr.element-row:not(.expanded-row):hover {
-  background: whitesmoke;
-}
-
-tr.element-row:not(.expanded-row):active {
-  background: #efefef;
-}
-
 .mat-form-field {
   font-size: 14px;
   width: 100%;
 }
 
-tr {
-  width: 20%;
-}
-
 .pointer{
   cursor: pointer;
+}
+
+.example-button-row button,
+.example-button-row a {
+  margin-right: 4px;
+}
+
+.error-snackbar {
+  background-color: green !important;
+}
+
+::ng-deep  .snackBar-success {
+  color: #ffffff !important;
+  background-color: #28a745 !important;
 }

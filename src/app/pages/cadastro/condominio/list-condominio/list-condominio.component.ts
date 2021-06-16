@@ -4,6 +4,7 @@ import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { Router } from '@angular/router';
 import { Condominio } from '../shared/condominio.model';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 const ELEMENT_DATA: Condominio[] = [
 
@@ -37,12 +38,10 @@ export class ListCondominioComponent implements OnInit {
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
 
-  constructor( private router: Router ) {
-     // Create 100 users
-     //const condominios = Array.from({length: 100}, (_, k) => createNew(k + 1));
-     // Assign the data to the data source for the table to render
-     //this.dataSource = new MatTableDataSource(condominios);
-  }
+  constructor(
+    private router: Router,
+    private snackBar: MatSnackBar
+  ) { }
 
   ngOnInit(): void {
   }
@@ -56,9 +55,19 @@ export class ListCondominioComponent implements OnInit {
     this.router.navigate(['condominio/novo']);
   }
 
-}
+  editar() {
+    this.router.navigate(['condominio/novo']);
+  }
 
-function createNew(id: number): Condominio {
+  deletar() {
+    this.snackBar.open(
+      'Registro Excluido com Sucesso!', 'Ok',
+      {
+        horizontalPosition: 'right',
+        verticalPosition: 'top',
+        panelClass: ['snackBar-success']
+      }
+    )
+  }
 
-  return
 }

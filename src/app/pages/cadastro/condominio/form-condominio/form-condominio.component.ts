@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { CondominioService } from '../shared/condominio.service';
 
 @Component({
   selector: 'app-form-condominio',
@@ -14,7 +15,23 @@ export class FormCondominioComponent implements OnInit {
 
   constructor(
     private router: Router,
-    private formBuilder: FormBuilder) { }
+    private formBuilder: FormBuilder,
+    private service: CondominioService) { }
+
+  gravar() {
+    console.log('Valor do Formulário');
+    console.log(this.formGroup.value);
+    this.voltar();
+  }
+
+  editar() {
+    this.router.navigate(['condominio/novo']);
+  }
+  deletar() {
+    console.log('Valor do Formulário');
+    console.log(this.formGroup.value);
+    this.voltar();
+  }
 
   ngOnInit(): void {
 

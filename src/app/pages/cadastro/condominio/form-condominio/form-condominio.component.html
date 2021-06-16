@@ -1,6 +1,6 @@
 
 <app-page-title page-model='Condominios'
-                [page-title]=''
+                page-title=' - Inclusão'
                 button-text='Voltar'
                 button-link="condominio"
                 button-icon='undo'
@@ -22,7 +22,12 @@
       <mat-form-field appearance="fill" class="full-width">
         <mat-label>Descrição</mat-label>
         <input formControlName='CON_DESCON' matInput maxlength="50" placeholder="Descrição">
+        <mat-error *ngIf="formGroup.dirty && formGroup.get('CON_DESCON').value.length==0">
+          Campo Descrição é obrigatório
+        </mat-error>
+        <mat-hint>Campo Descrição é obrigatório - hint</mat-hint>
       </mat-form-field>
+
       <mat-form-field appearance="fill">
         <mat-label>CNPJ</mat-label>
         <input formControlName='CON_COCNPJ' matInput maxlength="14" placeholder="CNPJ">
@@ -57,14 +62,16 @@
         <input formControlName='CON_CIDCON' matInput maxlength="50" placeholder="Cidade">
       </mat-form-field>
 
+      <!--
       <mat-form-field appearance="fill">
         <mat-label>UF</mat-label>
         <input formControlName='CON_ESTCON' matInput maxlength="2" placeholder="UF">
       </mat-form-field>
+      -->
 
       <mat-form-field appearance="fill">
         <mat-label>Estados</mat-label>
-        <mat-select>
+        <mat-select formControlName='CON_ESTCON'>
           <mat-option *ngFor="let item of estados" [value]="item">
             {{item}}
           </mat-option>
@@ -75,9 +82,9 @@
 
 
     <div class="space button"></div>
-    <button mat-raised-button [disabled]='!formGroup.valid' class="success white">
+    <button (click)='gravar()'
+            mat-raised-button [disabled]='!formGroup.valid' class="success white">
       <i class="material-icons">save</i>Salvar
     </button>
-
   </form>
 </div>

@@ -4,15 +4,14 @@ import { CommonModule } from '@angular/common';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
 
-
 @NgModule({
   declarations: [
-    PageTitleComponent
+    PageTitleComponent,
   ],
   imports: [
     CommonModule,
     MatToolbarModule,
-    MatButtonModule
+    MatButtonModule,
   ],
   exports: [
     CommonModule,

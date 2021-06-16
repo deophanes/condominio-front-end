@@ -14,7 +14,8 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
-
+import {MatSnackBarModule} from '@angular/material/snack-bar'
+import {MatDialogModule} from '@angular/material/dialog'
 
 @NgModule({
 
@@ -31,13 +32,13 @@ import { MatSelectModule } from '@angular/material/select';
     MatGridListModule,
     MatListModule,
     MatCardModule,
-
     MatTableModule,
     MatPaginatorModule,
     MatFormFieldModule,
     MatInputModule,
     MatSelectModule,
-
+    MatSnackBarModule,
+    MatDialogModule
   ],
   exports: [
     BrowserModule,
@@ -55,7 +56,8 @@ import { MatSelectModule } from '@angular/material/select';
     MatFormFieldModule,
     MatInputModule,
     MatSelectModule,
-
+    MatSnackBarModule,
+    MatDialogModule
   ],
 })
 
