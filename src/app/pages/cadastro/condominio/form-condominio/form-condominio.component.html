@@ -1,10 +1,5 @@
-
-<app-page-title page-model='Condominios'
-                page-title=' - Inclusão'
-                button-text='Voltar'
-                button-link="condominio"
-                button-icon='undo'
-                button-class='secondary white'>
+<app-page-title page-model='Condominios' page-title=' - Inclusão' button-text='Voltar' button-link="condominio"
+  button-icon='undo' button-class='secondary white'>
 </app-page-title>
 
 <div class="container">
@@ -62,13 +57,6 @@
         <input formControlName='CON_CIDCON' matInput maxlength="50" placeholder="Cidade">
       </mat-form-field>
 
-      <!--
-      <mat-form-field appearance="fill">
-        <mat-label>UF</mat-label>
-        <input formControlName='CON_ESTCON' matInput maxlength="2" placeholder="UF">
-      </mat-form-field>
-      -->
-
       <mat-form-field appearance="fill">
         <mat-label>Estados</mat-label>
         <mat-select formControlName='CON_ESTCON'>
@@ -77,13 +65,10 @@
           </mat-option>
         </mat-select>
       </mat-form-field>
-
     </div>
 
-
     <div class="space button"></div>
-    <button (click)='gravar()'
-            mat-raised-button [disabled]='!formGroup.valid' class="success white">
+    <button (click)='gravar()' mat-raised-button [disabled]='!formGroup.valid' class="success white">
       <i class="material-icons">save</i>Salvar
     </button>
   </form>

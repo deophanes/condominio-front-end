@@ -48,7 +48,7 @@ export class FormCondominioComponent implements OnInit {
       CON_FLGVOZ: [null ],
       CON_COCNPJ: [null, [ Validators.required, Validators.maxLength(14) ] ],
 
-    })
+    });
   }
 
   voltar() {

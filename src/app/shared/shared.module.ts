@@ -3,10 +3,12 @@ import { PageTitleComponent } from './componente/page-title/page-title.component
 import { CommonModule } from '@angular/common';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
+import { PageDialogComponent } from './componente/page-dialog/page-dialog.component';
 
 @NgModule({
   declarations: [
     PageTitleComponent,
+    PageDialogComponent
   ],
   imports: [
     CommonModule,
@@ -15,7 +17,8 @@ import { MatButtonModule } from '@angular/material/button';
   ],
   exports: [
     CommonModule,
-    PageTitleComponent
+    PageTitleComponent,
+    PageDialogComponent
   ]
 })
 

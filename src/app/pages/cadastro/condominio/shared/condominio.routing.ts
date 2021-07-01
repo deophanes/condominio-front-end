@@ -3,8 +3,8 @@ import { ListCondominioComponent } from '../list-condominio/list-condominio.comp
 import { FormCondominioComponent } from '../form-condominio/form-condominio.component';
 
 const routes: Routes = [
-  { path:'condominio', component: ListCondominioComponent },
-  { path:'condominio/novo', component: FormCondominioComponent }
+  { path: 'condominio', component: ListCondominioComponent },
+  { path: 'condominio/novo', component: FormCondominioComponent }
 ];
 
 export const CondominioRoutes = RouterModule.forChild(routes);

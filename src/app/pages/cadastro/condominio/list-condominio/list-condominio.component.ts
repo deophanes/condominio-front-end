@@ -5,12 +5,16 @@ import { MatTableDataSource } from '@angular/material/table';
 import { Router } from '@angular/router';
 import { Condominio } from '../shared/condominio.model';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { MatDialog } from '@angular/material/dialog';
+import { DialogCondominioComponent } from './dialog-condominio/dialog-condominio.component';
 
 const ELEMENT_DATA: Condominio[] = [
 
   {CON_CODCON: 1, CON_DESCON: 'MORADA DOS ORIXAS', CON_COCNPJ: '11111111111111', CON_CIDCON: 'TERESINA', CON_ESTCON: 'PI'},
   {CON_CODCON: 2, CON_DESCON: 'ED. RAFAELA DUARTE', CON_COCNPJ: '22222222222222', CON_CIDCON: 'JABOATAO DOS GUARARAPES', CON_ESTCON: 'PE'},
-  {CON_CODCON: 3, CON_DESCON: 'FLAMBOYANT', CON_COCNPJ: '33333333333333', CON_CIDCON: 'RECIFE', CON_ESTCON: 'PE'}
+  {CON_CODCON: 3, CON_DESCON: 'FLAMBOYANT', CON_COCNPJ: '33333333333333', CON_CIDCON: 'RECIFE', CON_ESTCON: 'PE'},
+  {CON_CODCON: 4, CON_DESCON: 'ED. RAFAELA DUARTE', CON_COCNPJ: '44444444444444', CON_CIDCON: 'OLINDA', CON_ESTCON: 'PE'},
+  {CON_CODCON: 5, CON_DESCON: 'FLAMBOYANT', CON_COCNPJ: '55555555555555', CON_CIDCON: 'PAULISTA', CON_ESTCON: 'PE'}
 
 ];
 
@@ -40,7 +44,8 @@ export class ListCondominioComponent implements OnInit {
 
   constructor(
     private router: Router,
-    private snackBar: MatSnackBar
+    private snackBar: MatSnackBar,
+    private dialog: MatDialog
   ) { }
 
   ngOnInit(): void {
@@ -60,14 +65,21 @@ export class ListCondominioComponent implements OnInit {
   }
 
   deletar() {
-    this.snackBar.open(
-      'Registro Excluido com Sucesso!', 'Ok',
-      {
-        horizontalPosition: 'right',
-        verticalPosition: 'top',
-        panelClass: ['snackBar-success']
+    let dialogRef =  this.dialog.open(DialogCondominioComponent);
+    dialogRef.afterClosed().subscribe(
+      result => {
+        if (result === 'True') {
+          this.snackBar.open(
+            'Registro Excluido com Sucesso!', 'Ok',
+            {
+              horizontalPosition: 'right',
+              verticalPosition: 'top',
+              panelClass: ['snackBar-success']
+            }
+          );
+        }
       }
-    )
+    );
   }
 
 }

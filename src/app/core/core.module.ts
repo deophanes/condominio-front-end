@@ -14,12 +14,15 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
-import {MatSnackBarModule} from '@angular/material/snack-bar'
-import {MatDialogModule} from '@angular/material/dialog'
+import {MatSnackBarModule} from '@angular/material/snack-bar';
+import {MatDialogModule} from '@angular/material/dialog';
+import { DialogCondominioComponent } from '../pages/cadastro/condominio/list-condominio/dialog-condominio/dialog-condominio.component';
 
 @NgModule({
 
-  declarations: [],
+  declarations: [
+    DialogCondominioComponent
+  ],
   imports: [
     CommonModule,
     BrowserModule,
