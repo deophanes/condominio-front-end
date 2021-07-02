@@ -18,16 +18,16 @@ export class FormCondominioComponent implements OnInit {
     private formBuilder: FormBuilder,
     private service: CondominioService) { }
 
-  gravar() {
+  gravar(): void {
     console.log('Valor do Formulário');
     console.log(this.formGroup.value);
     this.voltar();
   }
 
-  editar() {
+  editar(): void {
     this.router.navigate(['condominio/novo']);
   }
-  deletar() {
+  deletar(): void {
     console.log('Valor do Formulário');
     console.log(this.formGroup.value);
     this.voltar();
@@ -51,7 +51,7 @@ export class FormCondominioComponent implements OnInit {
     });
   }
 
-  voltar() {
+  voltar(): void {
     this.router.navigate(['condominio']);
   }
 
