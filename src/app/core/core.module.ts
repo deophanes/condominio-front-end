@@ -14,9 +14,10 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
-import {MatSnackBarModule} from '@angular/material/snack-bar';
-import {MatDialogModule} from '@angular/material/dialog';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatDialogModule } from '@angular/material/dialog';
 import { DialogCondominioComponent } from '../pages/cadastro/condominio/list-condominio/dialog-condominio/dialog-condominio.component';
+import { MatExpansionModule } from '@angular/material/expansion';
 
 @NgModule({
 
@@ -41,7 +42,8 @@ import { DialogCondominioComponent } from '../pages/cadastro/condominio/list-con
     MatInputModule,
     MatSelectModule,
     MatSnackBarModule,
-    MatDialogModule
+    MatDialogModule,
+    MatExpansionModule
   ],
   exports: [
     BrowserModule,
@@ -60,7 +62,8 @@ import { DialogCondominioComponent } from '../pages/cadastro/condominio/list-con
     MatInputModule,
     MatSelectModule,
     MatSnackBarModule,
-    MatDialogModule
+    MatDialogModule,
+    MatExpansionModule
   ],
 })
 

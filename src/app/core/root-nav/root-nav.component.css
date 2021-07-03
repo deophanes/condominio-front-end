@@ -20,3 +20,8 @@
 .button-row a {
   margin-right: 4px;
 }
+
+.example-headers-align .mat-expansion-panel-header {
+  justify-content: space-between;
+  align-items: center;
+}
