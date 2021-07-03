@@ -1,27 +1,38 @@
 import { Injectable } from '@angular/core';
 import { Condominio } from './condominio.model';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
+import { environment } from '../../../../../../environments/environment';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
-
 export class CondominioService {
 
-constructor() { }
+  apiURL: string = environment.apiURLBase + '/condominio';
 
+  constructor(private http: HttpClient) {}
 
-  getCondominio(): Condominio {
-    let c: Condominio = new Condominio();
-    c.CON_DESCON = 'CONDOMINIO JAMBALAIA';
-    c.CON_COCNPJ = '12345678901234';
-    c.CON_CEPCON = '54430160';
-    c.CON_ENDCON = 'RUA AMAMBAI';
-    c.CON_COMEND = 'APTO 101';
-    c.CON_BAICON = 'PIEDADE';
-    c.CON_CIDCON = 'JABOATAO DOS GUARARAPES';
-    c.CON_ESTCON = 'PE';
+  findAll(): Observable<Condominio[]> {
+    return this.http.get<Condominio[]>(this.apiURL);
+  }
 
-    return c;
+  findById(id: number): Observable<Condominio> {
+    return this.http.get<any>(`${this.apiURL}/${id}`);
+  }
 
+  insert(condominio: Condominio): Observable<Condominio> {
+    return this.http.post<Condominio>(this.apiURL, condominio);
+  }
+
+  update(condominio: Condominio): Observable<any> {
+    return this.http.put<Condominio>(
+      `${this.apiURL}/${condominio.codCon}`,
+      condominio
+    );
+  }
+
+  delete(condominio: Condominio): Observable<any> {
+    return this.http.delete<any>(`${this.apiURL}/${condominio.codCon}`);
   }
 }

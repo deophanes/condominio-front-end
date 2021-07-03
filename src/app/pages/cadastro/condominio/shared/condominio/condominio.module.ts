@@ -6,6 +6,7 @@ import { ListCondominioComponent } from '../../list-condominio/list-condominio.c
 import { SharedModule } from '../../../../../shared/shared.module';
 import { CoreModule } from '../../../../../core/core.module';
 import { FormCondominioComponent } from '../../form-condominio/form-condominio.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { FormCondominioComponent } from '../../form-condominio/form-condominio.c
     CoreModule,
     CondominioRoutes,
     ReactiveFormsModule,
-    SharedModule
+    SharedModule,
+    HttpClientModule
   ],
   exports: [
   ],

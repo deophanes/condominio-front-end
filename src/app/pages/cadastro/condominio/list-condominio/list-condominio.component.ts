@@ -7,16 +7,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { MatDialog } from '@angular/material/dialog';
 import { DialogCondominioComponent } from './dialog-condominio/dialog-condominio.component';
 import { Condominio } from '../shared/condominio/condominio.model';
-
-const ELEMENT_DATA: Condominio[] = [
-
-  {CON_CODCON: 1, CON_DESCON: 'MORADA DOS ORIXAS', CON_COCNPJ: '11111111111111', CON_CIDCON: 'TERESINA', CON_ESTCON: 'PI'},
-  {CON_CODCON: 2, CON_DESCON: 'ED. RAFAELA DUARTE', CON_COCNPJ: '22222222222222', CON_CIDCON: 'JABOATAO DOS GUARARAPES', CON_ESTCON: 'PE'},
-  {CON_CODCON: 3, CON_DESCON: 'FLAMBOYANT', CON_COCNPJ: '33333333333333', CON_CIDCON: 'RECIFE', CON_ESTCON: 'PE'},
-  {CON_CODCON: 4, CON_DESCON: 'ED. RAFAELA DUARTE', CON_COCNPJ: '44444444444444', CON_CIDCON: 'OLINDA', CON_ESTCON: 'PE'},
-  {CON_CODCON: 5, CON_DESCON: 'FLAMBOYANT', CON_COCNPJ: '55555555555555', CON_CIDCON: 'PAULISTA', CON_ESTCON: 'PE'}
-
-];
+import { CondominioService } from '../shared/condominio/condominio.service';
 
 @Component({
   selector: 'app-list-condominio',
@@ -26,8 +17,10 @@ const ELEMENT_DATA: Condominio[] = [
 
 export class ListCondominioComponent implements OnInit {
 
-  displayedColumns: string[] = ['CON_CODCON', 'CON_DESCON', 'CON_COCNPJ', 'CON_CIDCON', 'CON_ESTCON', 'ACAO'];
-  dataSource = new MatTableDataSource( ELEMENT_DATA );
+  condominio: Condominio[];
+  mensagemErro: string;
+  displayedColumns: string[] = ['codCon', 'desCon', 'coCnpj', 'cidCon', 'estCon', 'ACAO'];
+  dataSource: MatTableDataSource<Condominio>;
 
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
@@ -36,7 +29,6 @@ export class ListCondominioComponent implements OnInit {
     if (this.dataSource.paginator) {
       this.dataSource.paginator.firstPage();
     }
-
   }
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
@@ -45,10 +37,18 @@ export class ListCondominioComponent implements OnInit {
   constructor(
     private router: Router,
     private snackBar: MatSnackBar,
-    private dialog: MatDialog
+    private dialog: MatDialog,
+    private service: CondominioService
   ) { }
 
   ngOnInit(): void {
+    this.service.findAll().
+    subscribe(
+      response => {
+        this.dataSource = new MatTableDataSource(response);
+      },
+      erro => this.mensagemErro = 'Ocorreu um erro ao deletar o cliente.'
+    );
   }
 
   ngAfterViewInit() {

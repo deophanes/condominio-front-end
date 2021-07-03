@@ -19,7 +19,7 @@ import { CondominioModule } from './pages/cadastro/condominio/shared/condominio/
   imports: [
     CoreModule,
     CondominioModule,
-    AppRoutingModule,
+    AppRoutingModule
   ],
   exports: [
     CoreModule

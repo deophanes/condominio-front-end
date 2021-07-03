@@ -13,7 +13,7 @@ import { PageDialogComponent } from './componente/page-dialog/page-dialog.compon
   imports: [
     CommonModule,
     MatToolbarModule,
-    MatButtonModule,
+    MatButtonModule
   ],
   exports: [
     CommonModule,
