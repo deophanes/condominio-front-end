@@ -7,8 +7,7 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './pages/home/home.component';
 import { RootNavComponent } from './core/root-nav/root-nav.component';
 import { FooterComponent } from './core/footer/footer.component';
-
-import { CondominioModule } from './pages/cadastro/condominio/shared/condominio.module';
+import { CondominioModule } from './pages/cadastro/condominio/shared/condominio/condominio.module';
 
 @NgModule({
   declarations: [

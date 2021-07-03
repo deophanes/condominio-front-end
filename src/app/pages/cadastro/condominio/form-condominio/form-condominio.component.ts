@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { CondominioService } from '../shared/condominio.service';
+import { CondominioService } from '../shared/condominio/condominio.service';
 
 @Component({
   selector: 'app-form-condominio',

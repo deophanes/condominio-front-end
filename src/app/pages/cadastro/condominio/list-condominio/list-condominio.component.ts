@@ -3,10 +3,10 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { Router } from '@angular/router';
-import { Condominio } from '../shared/condominio.model';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { MatDialog } from '@angular/material/dialog';
 import { DialogCondominioComponent } from './dialog-condominio/dialog-condominio.component';
+import { Condominio } from '../shared/condominio/condominio.model';
 
 const ELEMENT_DATA: Condominio[] = [
 

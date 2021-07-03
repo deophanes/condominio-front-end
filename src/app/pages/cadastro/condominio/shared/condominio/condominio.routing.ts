@@ -1,6 +1,6 @@
 import { Routes, RouterModule } from '@angular/router';
-import { ListCondominioComponent } from '../list-condominio/list-condominio.component';
-import { FormCondominioComponent } from '../form-condominio/form-condominio.component';
+import { ListCondominioComponent } from '../../list-condominio/list-condominio.component';
+import { FormCondominioComponent } from '../../form-condominio/form-condominio.component';
 
 const routes: Routes = [
   { path: 'condominio', component: ListCondominioComponent },

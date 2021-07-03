@@ -6,7 +6,7 @@ const routes: Routes = [
 
   { path: '', component: HomeComponent },
   { path: 'condominio',
-        loadChildren: () => import('./pages/cadastro/condominio/shared/condominio.module').
+        loadChildren: () => import('./pages/cadastro/condominio/shared/condominio/condominio.module').
                 then(mod => mod.CondominioModule)
   },
 ];
