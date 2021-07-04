@@ -81,5 +81,4 @@ export class ListCondominioComponent implements OnInit {
       }
     );
   }
-
 }

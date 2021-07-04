@@ -16,50 +16,46 @@
     <div>
       <mat-form-field appearance="fill" class="full-width">
         <mat-label>Descrição</mat-label>
-        <input formControlName='CON_DESCON' matInput maxlength="50" placeholder="Descrição">
-        <mat-error *ngIf="formGroup.dirty && formGroup.get('CON_DESCON').value.length==0">
-          Campo Descrição é obrigatório
-        </mat-error>
-        <mat-hint>Campo Descrição é obrigatório - hint</mat-hint>
+        <input formControlName='desCon' matInput maxlength="50" placeholder="Descrição">
       </mat-form-field>
 
       <mat-form-field appearance="fill">
         <mat-label>CNPJ</mat-label>
-        <input formControlName='CON_COCNPJ' matInput maxlength="14" placeholder="CNPJ">
+        <input formControlName='coCnpj' matInput maxlength="14" placeholder="CNPJ">
       </mat-form-field>
     </div>
 
     <div>
       <mat-form-field appearance="fill">
         <mat-label>Cep</mat-label>
-        <input formControlName='CON_CEPCON' matInput maxlength="10" placeholder="Cep">
+        <input formControlName='cepCon' matInput maxlength="10" placeholder="Cep">
       </mat-form-field>
     </div>
 
     <div>
       <mat-form-field appearance="fill" class="full-width">
         <mat-label>Endereço</mat-label>
-        <input formControlName='CON_ENDCON' matInput maxlength="50" placeholder="Endereço">
+        <input formControlName='endCon' matInput maxlength="50" placeholder="Endereço">
       </mat-form-field>
       <mat-form-field appearance="fill">
         <mat-label>Complemento</mat-label>
-        <input formControlName='CON_COMEND' matInput maxlength="30" placeholder="Complemento">
+        <input formControlName='comEnd' matInput maxlength="30" placeholder="Complemento">
       </mat-form-field>
     </div>
 
     <div>
       <mat-form-field appearance="fill" class="half-width">
         <mat-label>Bairro</mat-label>
-        <input formControlName='CON_BAICON' matInput maxlength="50" placeholder="Bairro">
+        <input formControlName='baiCon' matInput maxlength="50" placeholder="Bairro">
       </mat-form-field>
       <mat-form-field appearance="fill" class="half-width">
         <mat-label>Cidade</mat-label>
-        <input formControlName='CON_CIDCON' matInput maxlength="50" placeholder="Cidade">
+        <input formControlName='cidCon' matInput maxlength="50" placeholder="Cidade">
       </mat-form-field>
 
       <mat-form-field appearance="fill">
         <mat-label>Estados</mat-label>
-        <mat-select formControlName='CON_ESTCON'>
+        <mat-select formControlName='estCon'>
           <mat-option *ngFor="let item of estados" [value]="item">
             {{item}}
           </mat-option>
